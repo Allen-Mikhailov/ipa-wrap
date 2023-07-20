@@ -19,6 +19,6 @@ AppNameTxt = open("./AppName.txt", "r")
 AppName = AppNameTxt.read()
 AppNameTxt.close()
 
-IPA = ZipFile("./output/"+AppName+".ipa", "w")
+IPA = ZipFile("./build/"+AppName+".ipa", "w")
 for file_name in os.listdir("./input"):   
-    IPA.write("./input/"+file_name, "/Payload/"+cleanFileName(file_name))
+    IPA.write("./src/"+file_name, "/Payload/"+cleanFileName(file_name))
