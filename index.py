@@ -15,10 +15,9 @@ def cleanFileName(file_name):
 
     return name+extension
 
-
-
-
-AppName = "React Native Demo"
+AppNameTxt = open("./AppName.txt", "r")
+AppName = AppNameTxt.read()
+AppNameTxt.close()
 
 IPA = ZipFile("./output/"+AppName+".ipa", "w")
 for file_name in os.listdir("./input"):   
